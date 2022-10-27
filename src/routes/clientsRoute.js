@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { postClient } from "../controllers/clientsController.js";
+import { postClient, getClientOrder} from "../controllers/clientsController.js";
 import { validClient } from "../middlewares/clientsMiddleware.js";
 
 const clientRouter = Router();
 
 clientRouter.post('/clients', validClient, postClient);
-// clientRouter.get('/clients/:id/orders', middlewares.clients, controllers.clients);
+clientRouter.get('/clients/:id/orders', getClientOrder);
 
 export default clientRouter;
