@@ -7,7 +7,7 @@ async function postClient(req, res) {
     const { name, address, phone } = req.body;
     try {
 
-        const InsertUser=await connection.query(`INSERT INTO clients (name,address,phone) VALUES ($1,$2,$3)`,
+        const InsertClient=await connection.query(`INSERT INTO clients (name,address,phone) VALUES ($1,$2,$3)`,
         [name,address,phone]);
 
         return res.sendStatus(201);
